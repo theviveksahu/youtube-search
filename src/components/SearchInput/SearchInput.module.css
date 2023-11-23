@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper form {
+  width: 100%;
+}
+
+.wrapper img {
+  width: 8rem;
+  height: 4rem;
+}
+
+.wrapper div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrapper div > button {
+  border-top-right-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+  border-right: 1px solid hsl(0deg 0% 75%);
+  border-top: 1px solid hsl(0deg 0% 75%);
+  border-bottom: 1px solid hsl(0deg 0% 75%);
+  border-left: 0;
+  cursor: pointer;
+  background-color: hsl(0deg 0% 75%);
+}
+
+.wrapper div > button > img {
+  width: 2.25rem;
+  height: 1.5rem;
+}
+
+.wrapper input {
+  display: block;
+  font-size: 1.2rem;
+  width: 70%;
+  border: 1px solid hsl(0deg 0% 75%);
+  border-top-left-radius: 2.5rem;
+  border-bottom-left-radius: 2.5rem;
+  padding: 0.5rem 1rem;
+  outline-offset: 0.25rem;
+}
+
+.wrapper input:focus {
+  outline: none;
+}

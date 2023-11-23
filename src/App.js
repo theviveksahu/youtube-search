@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import { SearchInput } from "./components/SearchInput/SearchInput";
+import { SearchResults } from "./components/SearchResults/SearchResults";
+import loader from "./assets/images/loader.gif";
 
 function App() {
+  const [searchResults, setSearchResults] = useState([]);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <SearchInput
+        setSearchResults={setSearchResults}
+        page={page}
+        setLoading={setLoading}
+      />
+      <div className="search-results-wrapper">
+        <>
+          <SearchResults results={searchResults} setPage={setPage} />
+          {loading && (
+            <div className="loader">
+              <img src={loader} alt="Loading..." />
+            </div>
+          )}
+        </>
+      </div>
     </div>
   );
 }
